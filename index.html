@@ -6,230 +6,195 @@
   <title>KBAS Soundpack — Producer Tech</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
   <meta name="description" content="KBAS Soundpack — ücretsiz producer pack. Download, preview, join our Discord." />
+
   <style>
     :root{
-      --bg:#070707; /* deep black */
+      --bg:#070707;
       --card:#0f0f10;
-      --accent:#e11d1d; /* strong red */
+      --accent:#e11d1d;
       --muted:#9b9b9b;
       --glass: rgba(255,255,255,0.03);
       --radius:14px;
       font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
     }
+
     *{box-sizing:border-box}
     html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg),#0a0a0b);color:#fff}
     a{color:inherit;text-decoration:none}
     .container{max-width:1100px;margin:40px auto;padding:28px}
 
-    /* Header */
     header{display:flex;align-items:center;justify-content:space-between;gap:16px}
     .brand{display:flex;gap:12px;align-items:center}
-    .logo{width:56px;height:56px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),#9b0b0b);box-shadow:0 6px 30px rgba(225,29,29,0.12), inset 0 -4px 18px rgba(0,0,0,0.35);font-weight:800}
+    .logo{width:56px;height:56px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),#9b0b0b);font-weight:800}
     .brand h1{font-size:18px;margin:0}
     .brand p{margin:0;font-size:12px;color:var(--muted)}
 
-    /* Hero */
     .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;margin-top:28px}
-    .hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:var(--radius);padding:28px;box-shadow:0 10px 40px rgba(0,0,0,0.6)}
+    .hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:var(--radius);padding:28px}
     .hero h2{font-size:32px;margin:0 0 8px}
     .hero p{color:var(--muted);margin:0 0 18px}
     .btn-row{display:flex;gap:12px;margin-top:12px}
     .btn{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:10px 14px;border-radius:10px;cursor:pointer;font-weight:600}
-    .btn-primary{background:var(--accent);border:0;color:#fff;box-shadow:0 8px 30px rgba(225,29,29,0.16)}
+    .btn-primary{background:var(--accent);border:0;color:#fff}
 
-    /* Download card */
     .download-card{padding:18px;border-radius:12px;background:linear-gradient(180deg,var(--card),#0b0b0c);border:1px solid rgba(255,255,255,0.03)}
     .pack-meta{display:flex;align-items:center;gap:12px}
     .pack-meta .art{width:78px;height:78px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#8b0b0b);display:grid;place-items:center;font-weight:800}
     .meta-right{flex:1}
-    .meta-right h3{margin:0 0 4px}
-    .meta-right p{margin:0;color:var(--muted);font-size:13px}
     .download-actions{display:flex;gap:10px;margin-top:12px}
-    .small{font-size:13px;padding:8px 10px}
 
-    /* Grid for content */
     .grid{display:grid;grid-template-columns:1fr 360px;gap:22px;margin-top:28px}
 
-    /* Pack contents */
     .card{background:var(--glass);border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,0.03)}
     .list{display:grid;gap:8px}
-    .list .item{display:flex;align-items:center;justify-content:space-between;padding:8px;border-radius:10px;background:linear-gradient(180deg, rgba(0,0,0,0.2), transparent)}
+    .item{display:flex;align-items:center;justify-content:space-between;padding:8px;border-radius:10px;background:rgba(255,255,255,0.05)}
 
-    /* Audio preview */
     .preview{display:grid;gap:12px}
-    .audio-row{display:flex;align-items:center;gap:12px;padding:10px;border-radius:10px;background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.02)}
-    .audio-row strong{display:block}
+    .audio-row{display:flex;align-items:center;gap:12px;padding:10px;border-radius:10px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.02)}
     audio{width:220px}
 
-    /* Timeline */
     .timeline{display:flex;flex-direction:column;gap:8px}
-    .timeline .row{display:flex;gap:12px;align-items:flex-start}
+    .row{display:flex;gap:12px}
     .dot{width:10px;height:10px;border-radius:50%;background:var(--accent);margin-top:6px}
 
     footer{margin-top:40px;color:var(--muted);font-size:13px;text-align:center}
 
-    /* Responsive */
     @media (max-width:980px){
       .hero{grid-template-columns:1fr}
       .grid{grid-template-columns:1fr}
       audio{width:160px}
     }
 
-    /* small helpers */
-    .muted{color:var(--muted)}
-    .chip{padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.02);font-weight:600;font-size:13px}
+    .chip{padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.06);font-weight:600;font-size:13px}
+    .social img{width:18px;height:18px}
+  </style>
+</head>
 
-<nav style="display:flex; gap:12px; align-items:center">
+<body>
+<div class="container">
 
-  <!-- Instagram Icon -->
-  <a class="chip social" href="https://instagram.com/kbaszone" target="_blank">
-    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" class="icon">
-  </a>
+  <header>
+    <div class="brand">
+      <div class="logo">KB</div>
+      <div>
+        <h1>KBAS Producer Pack</h1>
+        <p>v1.0 Release</p>
+      </div>
+    </div>
 
-  <!-- TikTok Icon -->
-  <a class="chip social" href="https://tiktok.com/@kbaszone" target="_blank">
-    <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" class="icon">
-  </a>
+    <nav style="display:flex; gap:12px; align-items:center">
+      <a class="chip social" href="https://instagram.com/kbaszone" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">
+      </a>
 
-  <!-- Patch Notes -->
-  <a class="chip" href="#updates">Patch Notları</a>
+      <a class="chip social" href="https://tiktok.com/@kbaszone" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png">
+      </a>
 
-  <!-- Discord -->
-  <a class="chip" href="/discord-link-placeholder" style="border:1px solid rgba(255,255,255,0.04);">
-    Join Discord
-  </a>
+      <a class="chip" href="#updates">Patch Notları</a>
 
-</nav>
-      </nav>
-    </header>
+      <a class="chip" href="https://discord.gg/aSrA3fxj" target="_blank">Join Discord</a>
+    </nav>
+  </header>
 
-    <section class="hero">
-      <div class="hero-card">
-        <h2>KBAS Producer Pack v1.0</h2>
-        <p class="muted">Takipçilere ve Destekçilere ücretsiz sound pack.</p>
+  <section class="hero">
+    <div class="hero-card">
+      <h2>KBAS Producer Pack v1.0</h2>
+      <p class="muted">Takipçilere ücretsiz producer sound pack.</p>
 
-        <div style="display:flex;gap:14px;align-items:center;margin-top:18px">
-          <div style="flex:1">
-            <div style="display:flex;gap:10px;align-items:center">
-              <div style="width:86px;height:86px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#8b0b0b);display:grid;place-items:center;font-weight:900;font-size:18px">KBAS</div>
-              <div>
-                <div style="font-weight:700">Producer Tech</div>
-                <div class="muted" style="font-size:13px">Toplam: 18 Klasör Dosya • 131,8 MB </div>
-              </div>
+      <div style="display:flex;gap:14px;align-items:center;margin-top:18px">
+        <div style="flex:1">
+          <div style="display:flex;gap:10px;align-items:center">
+            <div style="width:86px;height:86px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#8b0b0b);display:grid;place-items:center;font-weight:900;font-size:18px">KBAS</div>
+            <div>
+              <div style="font-weight:700">Producer Tech</div>
+              <div class="muted" style="font-size:13px">Toplam: 131,8 MB</div>
             </div>
-
-            <div class="btn-row" style="margin-top:16px">
-              <a id="download" class="btn btn-primary" href="#" onclick="alert('Linkleri index.html içinde düzenleyin ve gerçek indirme URL'lerini koyun.');return false">Direct Download</a>
-              <a class="btn small" href="#preview">Quick Preview</a>
-            </div>
-
-            <div style="margin-top:12px;font-size:13px;color:var(--muted)">Erişim: <strong>Herkese açık</strong> • Telif: KBAS Collective</div>
           </div>
-        </div>
 
-        <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
-          <div class="chip">808 Kit</div>
-          <div class="chip">Kick Pack</div>
-          <div class="chip">Hi-Hat Essentials</div>
-          <div class="chip">Loops & MIDI</div>
+          <div class="btn-row" style="margin-top:16px">
+            <a class="btn btn-primary" href="https://drive.google.com/uc?export=download&id=1udK_GHTSx40Ot_a9n6A6hCJ__UQgnIH9" target="_blank">Direct Download</a>
+            <a class="btn small" href="#preview">Quick Preview</a>
+          </div>
         </div>
       </div>
 
-      <aside class="download-card">
-        <div class="pack-meta">
-          <div class="art">P</div>
-          <div class="meta-right">
-            <h3>KBAS Pack v1.0</h3>
-            <p class="muted">İlk sürüm — 12 Aralık 2025</p>
-          </div>
+      <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
+        <div class="chip">808 Kit</div>
+        <div class="chip">Kick Pack</div>
+        <div class="chip">Hi-Hat Essentials</div>
+        <div class="chip">Loops & MIDI</div>
+      </div>
+    </div>
+
+    <aside class="download-card">
+      <div class="pack-meta">
+        <div class="art">P</div>
+        <div class="meta-right">
+          <h3>KBAS Pack v1.0</h3>
+          <p class="muted">12 Aralık 2025</p>
         </div>
-
-        <div class="download-actions">
-          <!-- Replace the href values with your real hosting links (Google Drive, Mega, GitHub Releases) -->
-          <a class="btn btn-primary" href=https://drive.google.com/file/d/1udK_GHTSx40Ot_a9n6A6hCJ__UQgnIH9/view?usp=sharing target="_blank">Download (Drive)</a>
-        </div>
-
-        <div style="margin-top:12px;color:var(--muted);font-size:13px"> </div>
-      </aside>
-    </section>
-
-    <section class="grid">
-      <div class="card">
-        <h3>İçerik Detayı</h3>
-        <div class="list" style="margin-top:12px">
-          <div class="item"><div>808s</div><div class="muted">25 adet</div></div>
-          <div class="item"><div>Kicks</div><div class="muted">30 adet</div></div>
-          <div class="item"><div>Snares / Rims</div><div class="muted">35 adet</div></div>
-          <div class="item"><div>Hi-Hat Pack</div><div class="muted">50 adet</div></div>
-          <div class="item"><div>Loops</div><div class="muted">15 adet</div></div>
-          <div class="item"><div>Vox & FX</div><div class="muted">54 adet</div></div>
-          <div class="item"><div>MIDI Pack</div><div class="muted">20 adet</div></div>
-        </div>
-
-        <hr style="margin:18px 0;border:none;border-top:1px solid rgba(255,255,255,0.03)" />
-        <h4>Nasıl kullanılır?</h4>
-        <ol style="color:var(--muted);margin-top:8px">
-          <li>İndir -> ZIP'ten çıkar</li>
-          <li>Beğendiysen paylaş</li>
-        </ol>
       </div>
 
-      <aside class="card">
-        <h3 id="preview">Örnek Önizlemeler</h3>
-        <div class="preview" style="margin-top:12px">
-          <!-- NOTE: Replace src with real short mp3 previews uploaded to your hosting. Placeholders are kept empty intentionally. -->
-          <div class="audio-row">
-            <div style="flex:1">
-              <strong>808 - Satan</strong>
-              <div class="muted" style="font-size:13px"></div>
-            </div>
-            <audio controls src="https://drive.google.com/file/d/1qhtNKlQa1UAEY3UJqM5yqnywK0AsJUZU/view?usp=sharing">Your browser does not support audio</audio>
-          </div>
+      <div class="download-actions">
+        <a class="btn btn-primary" href="https://drive.google.com/uc?export=download&id=1udK_GHTSx40Ot_a9n6A6hCJ__UQgnIH9" target="_blank">
+          Download (Drive)
+        </a>
+      </div>
+    </aside>
+  </section>
 
-          <div class="audio-row">
-            <div style="flex:1">
-              <strong>Open Hi-hat - 10</strong>
-              <div class="muted" style="font-size:13px"></div>
-            </div>
-            <audio controls src="https://drive.google.com/file/d/1O7elIkxqkw_D-v1UupJKIJlippiXV478/view?usp=sharing">Your browser does not support audio</audio>
-          </div>
+  <section class="grid">
+    <div class="card">
+      <h3>İçerik Detayı</h3>
+      <div class="list" style="margin-top:12px">
+        <div class="item"><div>808s</div><div class="muted">25 adet</div></div>
+        <div class="item"><div>Kicks</div><div class="muted">30 adet</div></div>
+        <div class="item"><div>Snares / Rims</div><div class="muted">35 adet</div></div>
+        <div class="item"><div>Hi-Hat Pack</div><div class="muted">50 adet</div></div>
+        <div class="item"><div>Loops</div><div class="muted">15 adet</div></div>
+        <div class="item"><div>Vox & FX</div><div class="muted">54 adet</div></div>
+        <div class="item"><div>MIDI Pack</div><div class="muted">20 adet</div></div>
+      </div>
+    </div>
 
-          <div class="audio-row">
-            <div style="flex:1">
-              <strong>FX - Sword</strong>
-              <div class="muted" style="font-size:13px"></div>
-            </div>
-            <audio controls src="https://drive.google.com/file/d/10emF0qu3RW9z2Gn_G1RMkBgJ3MtU-5Lf/view?usp=sharing">Your browser does not support audio</audio>
-          </div>
+    <aside class="card">
+      <h3 id="preview">Örnek Önizlemeler</h3>
+      <div class="preview" style="margin-top:12px">
 
+        <div class="audio-row">
+          <strong>808 - Satan</strong>
+          <audio controls src="https://drive.google.com/uc?export=download&id=1qhtNKlQa1UAEY3UJqM5yqnywK0AsJUZU"></audio>
         </div>
 
-        <hr style="margin:14px 0;border:none;border-top:1px solid rgba(255,255,255,0.03)" />
-        <div style="font-size:13px;color:var(--muted)"></div>
-      </aside>
-    </section>
+        <div class="audio-row">
+          <strong>Open Hi-hat - 10</strong>
+          <audio controls src="https://drive.google.com/uc?export=download&id=1O7elIkxqkw_D-v1UupJKIJlippiXV478"></audio>
+        </div>
 
-    <section style="margin-top:26px" class="card">
-      <h3 id="updates">Patch Notes & Sürüm Geçmişi</h3>
-      <div class="timeline" style="margin-top:12px">
-        <div class="row"><div class="dot"></div><div><strong>v1.0 — 11 Aralık 2025</strong><div class="muted">İlk sürüm: 808, Kick, Snare, Hi-Hat, Loops, MIDI</div></div></div>
-        <div class="row"><div class="dot" style="background:#b31b1b"></div><div><strong>v1.1 — TBD</strong><div class="muted">Yeni 808 seti, adlib vox'lar</div></div></div>
+        <div class="audio-row">
+          <strong>FX - Sword</strong>
+          <audio controls src="https://drive.google.com/uc?export=download&id=10emF0qu3RW9z2Gn_G1RMkBgJ3MtU-5Lf"></audio>
+        </div>
+
       </div>
-    </section>
+    </aside>
+  </section>
 
-    <footer>
-      <div>© KBAS Collective • Tüm hakları saklıdır. Bu paket ücretsizdir — ticari kullanımlarda kaynak belirtiniz.</div>
-      <div style="margin-top:8px"><a href="https://discord.gg/aSrA3fxj">Discord</a> • <a href="#">Privacy</a> • <a href="#">Terms</a></div>
-    </footer>
-  </div>
+  <section style="margin-top:26px" class="card">
+    <h3 id="updates">Patch Notes & Sürüm Geçmişi</h3>
+    <div class="timeline" style="margin-top:12px">
+      <div class="row"><div class="dot"></div><div><strong>v1.0 — 11 Aralık 2025</strong><div class="muted">İlk sürüm.</div></div></div>
+      <div class="row"><div class="dot" style="background:#b31b1b"></div><div><strong>v1.1 — Yakında</strong><div class="muted">Yeni 808 seti, adlib vox'lar</div></div></div>
+    </div>
+  </section>
 
-  <!--
-    USAGE NOTES:
-    - Replace placeholder hrefs (Drive/Mega/etc.) with actual links.
-    - Replace audio src attributes with hosted short mp3 previews.
-    - If you deploy to GitHub Pages, put this file as index.html in the repo root.
-    - Want me to edit text, change Turkish/English mix, or insert your Discord invite? Tell me and I'll update the file.
-  -->
+  <footer>
+    <div>© KBAS Collective • Tüm hakları saklıdır.</div>
+    <div style="margin-top:8px"><a href="https://discord.gg/aSrA3fxj">Discord</a></div>
+  </footer>
 
+</div>
 </body>
 </html>
+
