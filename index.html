@@ -5,8 +5,6 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>KBAS Soundpack — Producer Tech</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <meta name="description" content="KBAS Soundpack — ücretsiz producer pack. Download, preview, join our Discord." />
-
   <style>
     :root{
       --bg:#070707;
@@ -15,58 +13,64 @@
       --muted:#9b9b9b;
       --glass: rgba(255,255,255,0.03);
       --radius:14px;
-      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      font-family:'Inter',system-ui;
     }
-
     *{box-sizing:border-box}
-    html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg),#0a0a0b);color:#fff}
+    html,body{margin:0;background:#070707;color:#fff}
     a{color:inherit;text-decoration:none}
     .container{max-width:1100px;margin:40px auto;padding:28px}
 
-    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
-    .brand{display:flex;gap:12px;align-items:center}
-    .logo{width:56px;height:56px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),#9b0b0b);font-weight:800}
+    header{display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{
+      width:56px;height:56px;border-radius:12px;
+      background: var(--accent);
+      background-size:cover;
+      background-position:center;
+    }
     .brand h1{font-size:18px;margin:0}
     .brand p{margin:0;font-size:12px;color:var(--muted)}
 
+    .chip{padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.04);font-weight:600;font-size:13px}
+
+    nav{display:flex;gap:12px;align-items:center}
+
+    .icon{
+      width:22px;height:22px;
+      filter:brightness(0) invert(1);
+      opacity:.8;
+      transition:.2s;
+    }
+    .chip.social:hover .icon{opacity:1;filter:drop-shadow(0 0 6px var(--accent))}
+
     .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;margin-top:28px}
-    .hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:var(--radius);padding:28px}
-    .hero h2{font-size:32px;margin:0 0 8px}
-    .hero p{color:var(--muted);margin:0 0 18px}
-    .btn-row{display:flex;gap:12px;margin-top:12px}
-    .btn{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:10px 14px;border-radius:10px;cursor:pointer;font-weight:600}
-    .btn-primary{background:var(--accent);border:0;color:#fff}
+    .hero-card{background:rgba(255,255,255,0.02);border-radius:var(--radius);padding:28px;box-shadow:0 0 25px rgba(0,0,0,0.5)}
+    .hero h2{margin:0;font-size:30px}
+    .muted{color:var(--muted)}
+    .btn{padding:10px 14px;border-radius:10px;background:rgba(255,255,255,0.06);font-weight:600}
+    .btn-primary{background:var(--accent);color:#fff;border:0}
 
-    .download-card{padding:18px;border-radius:12px;background:linear-gradient(180deg,var(--card),#0b0b0c);border:1px solid rgba(255,255,255,0.03)}
-    .pack-meta{display:flex;align-items:center;gap:12px}
-    .pack-meta .art{width:78px;height:78px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#8b0b0b);display:grid;place-items:center;font-weight:800}
-    .meta-right{flex:1}
-    .download-actions{display:flex;gap:10px;margin-top:12px}
-
-    .grid{display:grid;grid-template-columns:1fr 360px;gap:22px;margin-top:28px}
-
-    .card{background:var(--glass);border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,0.03)}
-    .list{display:grid;gap:8px}
-    .item{display:flex;align-items:center;justify-content:space-between;padding:8px;border-radius:10px;background:rgba(255,255,255,0.05)}
-
-    .preview{display:grid;gap:12px}
-    .audio-row{display:flex;align-items:center;gap:12px;padding:10px;border-radius:10px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.02)}
-    audio{width:220px}
-
-    .timeline{display:flex;flex-direction:column;gap:8px}
-    .row{display:flex;gap:12px}
-    .dot{width:10px;height:10px;border-radius:50%;background:var(--accent);margin-top:6px}
-
-    footer{margin-top:40px;color:var(--muted);font-size:13px;text-align:center}
-
-    @media (max-width:980px){
-      .hero{grid-template-columns:1fr}
-      .grid{grid-template-columns:1fr}
-      audio{width:160px}
+    .pack-art{
+      width:86px;height:86px;border-radius:12px;
+      background-size:cover;background-position:center;
+      background-image:url('https://imgur.com/a/FEogMzH'); /* ← LOGO URL’Sİ */
     }
 
-    .chip{padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.06);font-weight:600;font-size:13px}
-    .social img{width:18px;height:18px}
+    .download-card{background:var(--card);border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,0.05)}
+
+    .grid{display:grid;grid-template-columns:1fr 360px;gap:22px;margin-top:28px}
+    .card{background:rgba(255,255,255,0.03);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.05)}
+    .item{display:flex;justify-content:space-between;padding:8px;background:rgba(0,0,0,0.2);border-radius:10px;margin-bottom:8px}
+
+    .timeline .row{display:flex;gap:12px;margin-bottom:10px}
+    .dot{width:10px;height:10px;background:var(--accent);border-radius:50%;margin-top:5px}
+
+    footer{margin-top:40px;text-align:center;color:var(--muted);font-size:13px}
+
+    @media(max-width:900px){
+      .hero{grid-template-columns:1fr}
+      .grid{grid-template-columns:1fr}
+    }
   </style>
 </head>
 
@@ -75,126 +79,82 @@
 
   <header>
     <div class="brand">
-      <div class="logo">KB</div>
+      <div class="logo" style="background-image:url('BURAYA_LOGO_URL');"></div>
       <div>
-        <h1>KBAS Producer Pack</h1>
-        <p>v1.0 Release</p>
+        <h1>KBAS Soundpack</h1>
+        <p>Producer Tech</p>
       </div>
     </div>
 
-    <nav style="display:flex; gap:12px; align-items:center">
+    <nav>
       <a class="chip social" href="https://instagram.com/kbaszone" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">
+        <img class="icon" src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">
       </a>
-
       <a class="chip social" href="https://tiktok.com/@kbaszone" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png">
+        <img class="icon" src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png">
       </a>
-
       <a class="chip" href="#updates">Patch Notları</a>
-
-      <a class="chip" href="https://discord.gg/aSrA3fxj" target="_blank">Join Discord</a>
+      <a class="chip" href="https://discord.gg/aSrA3fxj">Discord</a>
     </nav>
   </header>
 
   <section class="hero">
     <div class="hero-card">
       <h2>KBAS Producer Pack v1.0</h2>
-      <p class="muted">Takipçilere ücretsiz producer sound pack.</p>
+      <p class="muted">Takipçilere ücretsiz sound pack.</p>
 
-      <div style="display:flex;gap:14px;align-items:center;margin-top:18px">
-        <div style="flex:1">
-          <div style="display:flex;gap:10px;align-items:center">
-            <div style="width:86px;height:86px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#8b0b0b);display:grid;place-items:center;font-weight:900;font-size:18px">KBAS</div>
-            <div>
-              <div style="font-weight:700">Producer Tech</div>
-              <div class="muted" style="font-size:13px">Toplam: 131,8 MB</div>
-            </div>
-          </div>
-
-          <div class="btn-row" style="margin-top:16px">
-            <a class="btn btn-primary" href="https://drive.google.com/uc?export=download&id=1udK_GHTSx40Ot_a9n6A6hCJ__UQgnIH9" target="_blank">Direct Download</a>
-            <a class="btn small" href="#preview">Quick Preview</a>
-          </div>
+      <div style="display:flex;gap:14px;margin-top:18px">
+        <div class="pack-art"></div>
+        <div>
+          <strong>Producer Tech</strong><br>
+          <span class="muted" style="font-size:13px">131 MB • 18 Klasör</span>
         </div>
       </div>
 
-      <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
-        <div class="chip">808 Kit</div>
-        <div class="chip">Kick Pack</div>
-        <div class="chip">Hi-Hat Essentials</div>
-        <div class="chip">Loops & MIDI</div>
+      <div style="margin-top:18px;display:flex;gap:12px">
+        <a class="btn btn-primary" href="#">Direct Download</a>
+        <a class="btn" href="#content">İçerik</a>
       </div>
     </div>
 
-    <aside class="download-card">
-      <div class="pack-meta">
-        <div class="art">P</div>
-        <div class="meta-right">
-          <h3>KBAS Pack v1.0</h3>
-          <p class="muted">12 Aralık 2025</p>
-        </div>
-      </div>
-
-      <div class="download-actions">
-        <a class="btn btn-primary" href="https://drive.google.com/uc?export=download&id=1udK_GHTSx40Ot_a9n6A6hCJ__UQgnIH9" target="_blank">
-          Download (Drive)
-        </a>
-      </div>
-    </aside>
+    <div class="download-card">
+      <h3>KBAS Pack v1.0</h3>
+      <p class="muted">İlk sürüm — 12 Aralık 2025</p>
+      <a class="btn btn-primary" target="_blank" href="https://drive.google.com/file/d/1udK_GHTSx40Ot_a9n6A6hCJ__UQgnIH9/view">Download (Drive)</a>
+    </div>
   </section>
 
-  <section class="grid">
+  <section id="content" class="grid">
     <div class="card">
-      <h3>İçerik Detayı</h3>
-      <div class="list" style="margin-top:12px">
-        <div class="item"><div>808s</div><div class="muted">25 adet</div></div>
-        <div class="item"><div>Kicks</div><div class="muted">30 adet</div></div>
-        <div class="item"><div>Snares / Rims</div><div class="muted">35 adet</div></div>
-        <div class="item"><div>Hi-Hat Pack</div><div class="muted">50 adet</div></div>
-        <div class="item"><div>Loops</div><div class="muted">15 adet</div></div>
-        <div class="item"><div>Vox & FX</div><div class="muted">54 adet</div></div>
-        <div class="item"><div>MIDI Pack</div><div class="muted">20 adet</div></div>
-      </div>
+      <h3>İçerik</h3>
+      <div class="item"><div>808s</div><div class="muted">25</div></div>
+      <div class="item"><div>Kicks</div><div class="muted">30</div></div>
+      <div class="item"><div>Snares</div><div class="muted">35</div></div>
+      <div class="item"><div>Hi-Hats</div><div class="muted">50</div></div>
+      <div class="item"><div>Loops</div><div class="muted">15</div></div>
+      <div class="item"><div>FX & Vox</div><div class="muted">54</div></div>
+      <div class="item"><div>MIDI</div><div class="muted">20</div></div>
     </div>
 
-    <aside class="card">
-      <h3 id="preview">Örnek Önizlemeler</h3>
-      <div class="preview" style="margin-top:12px">
-
-        <div class="audio-row">
-          <strong>808 - Satan</strong>
-          <audio controls src="https://drive.google.com/uc?export=download&id=1qhtNKlQa1UAEY3UJqM5yqnywK0AsJUZU"></audio>
+    <div class="card">
+      <h3 id="updates">Patch Notes</h3>
+      <div class="timeline">
+        <div class="row">
+          <div class="dot"></div>
+          <div><strong>v1.0 — 11 Aralık 2025</strong><br><span class="muted">İlk sürüm</span></div>
         </div>
-
-        <div class="audio-row">
-          <strong>Open Hi-hat - 10</strong>
-          <audio controls src="https://drive.google.com/uc?export=download&id=1O7elIkxqkw_D-v1UupJKIJlippiXV478"></audio>
+        <div class="row">
+          <div class="dot" style="background:#a11"></div>
+          <div><strong>v1.1 — Yakında</strong><br><span class="muted">Yeni 808 seti + Adlibs</span></div>
         </div>
-
-        <div class="audio-row">
-          <strong>FX - Sword</strong>
-          <audio controls src="https://drive.google.com/uc?export=download&id=10emF0qu3RW9z2Gn_G1RMkBgJ3MtU-5Lf"></audio>
-        </div>
-
       </div>
-    </aside>
-  </section>
-
-  <section style="margin-top:26px" class="card">
-    <h3 id="updates">Patch Notes & Sürüm Geçmişi</h3>
-    <div class="timeline" style="margin-top:12px">
-      <div class="row"><div class="dot"></div><div><strong>v1.0 — 11 Aralık 2025</strong><div class="muted">İlk sürüm.</div></div></div>
-      <div class="row"><div class="dot" style="background:#b31b1b"></div><div><strong>v1.1 — Yakında</strong><div class="muted">Yeni 808 seti, adlib vox'lar</div></div></div>
     </div>
   </section>
 
   <footer>
-    <div>© KBAS Collective • Tüm hakları saklıdır.</div>
-    <div style="margin-top:8px"><a href="https://discord.gg/aSrA3fxj">Discord</a></div>
+    © KBAS Collective – Tüm hakları saklıdır.
   </footer>
 
 </div>
 </body>
 </html>
-
